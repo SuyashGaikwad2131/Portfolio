@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+    emailjs.init("service_kafe2lp");
 
     const getInTouchBtn = document.querySelector("#getInTouchBtn");
     const contactForm = document.querySelector("#contactForm");
@@ -8,9 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
     getInTouchBtn.addEventListener("click", function (e) {
         e.preventDefault();
         contactForm.style.display = "block";
+        window.scrollTo({ top: document.querySelector("#contact").offsetTop, behavior: 'smooth' });
     });
 
-    sendBtn.addEventListener("click", function (e) {
+    contactForm.querySelector("form").addEventListener("submit", function (e) {
         e.preventDefault();
 
         const name = document.querySelector("#name").value;
@@ -22,18 +23,15 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        emailjs.send("service_kafe2lp", "template_fnxh3k9", {
-            from_name: name,
-            from_email: email,
-            message: message
-        }).then(function(response) {
-            alert("Your message has been sent!");
-            contactForm.style.display = "none";
-            document.querySelector("#name").value = '';
-            document.querySelector("#email").value = '';
-            document.querySelector("#message").value = '';
-        }, function(error) {
-            alert("Failed to send the message.");
-        });
+        emailjs.sendForm('service_kafe2lp', 'template_zrnfqny', this)
+            .then(function(response) {
+                alert("Your message has been sent!");
+                contactForm.style.display = "none";
+                document.querySelector("#name").value = '';
+                document.querySelector("#email").value = '';
+                document.querySelector("#message").value = '';
+            }, function(error) {
+                alert("Failed to send the message.");
+            });
     });
 });
