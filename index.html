@@ -19,6 +19,9 @@
     <link href="contact.css" rel="stylesheet" />
     <link href="footer.css" rel="stylesheet" />
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         #borderimg {
             padding-right: 1ch;
             border-radius: 50ch;
@@ -48,6 +51,7 @@
             </div>
         </div>
     </header>
+
     <section class="home" id="home">
         <div class="container">
             <div class="row full-screen">
@@ -75,6 +79,7 @@
             </div>
         </div>
     </section>
+
     <section class="about" id="about">
         <div class="container">
             <div class="row">
@@ -91,9 +96,7 @@
                         </div>
                         <div class="text">
                             <h4>I'm Suyash Gaikwad</h4>
-                            <h6>A <span>Database developer</span> and <span>Software Engineer</span> Working in
-                                Mverse Technologies, Mumbai, Maharashtra
-                            </h6>
+                            <h6>A <span>Database developer</span> and <span>Software Engineer</span> Working in Mverse Technologies, Mumbai, Maharashtra</h6>
                             <p>1 Year Experience in database development with Responsible for creating or maintaining the database components of an application that uses the Database technology.
                                 1. Data gathering before development of a database. Designing, developing, testing, implementation and maintenance of new and existing databases.
                                 2. Modifying databases and products according to client needs.
@@ -126,6 +129,7 @@
                 </div>
             </div>
     </section>
+
     <section class="services" id="services">
         <div class="container">
             <div class="row">
@@ -169,6 +173,7 @@
             </div>
         </div>
     </section>
+
     <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="row">
@@ -179,36 +184,50 @@
             <div class="row">
                 <div class="filter-btn">
                     <ul id="filterBtn">
-                        <li class="active" data-target="all">All</li>
+                        <li class="active" data-filter="all">All</li>
+                        <li data-filter="development">Development</li>
+                        <li data-filter="design">Design</li>
+                        <li data-filter="seo">SEO</li>
                     </ul>
                 </div>
+            </div>
+            <div class="row">
                 <div class="portfolio-content">
-                    <div class="gallery">
-                        <div class="gallery-item all">
-                            <img src="https://cde.s3.ap-south-1.amazonaws.com/certificates/Foundations-Introduction-to-Cyber-Security.png" class="img-responsive" alt="Portfolio" />
+                    <div class="grid">
+                        <div class="grid-item development">
+                            <img src="certifications/Oracle Certified Associate.jpg" alt="Oracle Certified Associate" />
                             <div class="overlay">
-                                <div class="overlay-text">
-                                    <h4>Cyber Security</h4>
-                                    <p>Foundations of Cyber Security from Cisco</p>
-                                </div>
+                                <h4>Oracle Certified Associate</h4>
                             </div>
                         </div>
-                        <div class="gallery-item all">
-                            <img src="https://cde.s3.ap-south-1.amazonaws.com/certificates/Structured-Query-Language.png" class="img-responsive" alt="Portfolio" />
+                        <div class="grid-item design">
+                            <img src="certifications/Spring Boot Developer.jpg" alt="Spring Boot Developer" />
                             <div class="overlay">
-                                <div class="overlay-text">
-                                    <h4>Structured Query Language</h4>
-                                    <p>Structured Query Language from Cisco</p>
-                                </div>
+                                <h4>Spring Boot Developer</h4>
                             </div>
                         </div>
-                        <div class="gallery-item all">
-                            <img src="https://cde.s3.ap-south-1.amazonaws.com/certificates/Oracle-PLSQL.png" class="img-responsive" alt="Portfolio" />
+                        <div class="grid-item seo">
+                            <img src="certifications/Java Developer.jpg" alt="Java Developer" />
                             <div class="overlay">
-                                <div class="overlay-text">
-                                    <h4>Oracle PL/SQL</h4>
-                                    <p>Oracle PL/SQL from Codecademy</p>
-                                </div>
+                                <h4>Java Developer</h4>
+                            </div>
+                        </div>
+                        <div class="grid-item seo">
+                            <img src="certifications/Web Developer.jpg" alt="Web Developer" />
+                            <div class="overlay">
+                                <h4>Web Developer</h4>
+                            </div>
+                        </div>
+                        <div class="grid-item seo">
+                            <img src="certifications/Database Developer.jpg" alt="Database Developer" />
+                            <div class="overlay">
+                                <h4>Database Developer</h4>
+                            </div>
+                        </div>
+                        <div class="grid-item design">
+                            <img src="certifications/Certified Frontend Developer.jpg" alt="Certified Frontend Developer" />
+                            <div class="overlay">
+                                <h4>Certified Frontend Developer</h4>
                             </div>
                         </div>
                     </div>
@@ -216,6 +235,7 @@
             </div>
         </div>
     </section>
+
     <section class="contact" id="contact">
         <div class="container">
             <div class="row">
@@ -245,6 +265,7 @@
             </div>
         </div>
     </section>
+
     <footer>
         <div class="container">
             <div class="row">
@@ -254,6 +275,7 @@
             </div>
         </div>
     </footer>
+
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
         (function () {
@@ -269,7 +291,7 @@
             emailjs.sendForm('service_kafe2lp', 'template_zrnfqny', formData)
                 .then(function (response) {
                     alert('Your message has been sent successfully!');
-                    form.reset();
+                    form.reset(); // Clear the form
                 }, function (error) {
                     alert('Oops! Something went wrong.');
                 });
