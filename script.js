@@ -11,7 +11,7 @@ document.getElementById('contactForm').addEventListener('submit', function (even
         message: document.getElementById('message').value
     };
 
-    emailjs.send('service_kafe2lp', 'template_xxx', templateParams) // Replace 'template_xxx' with your EmailJS template ID
+    emailjs.send('service_kafe2lp', 'template_zrnfqny', templateParams) // Replace 'template_xxx' with your EmailJS template ID
         .then(function (response) {
             alert('Message sent successfully!');
         }, function (error) {
